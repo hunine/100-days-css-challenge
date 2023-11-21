@@ -1,0 +1,227 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #272C34;
+  color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$cubic-bezier: cubic-bezier(.5, 0, .5, 1);
+
+.circle {
+  position: relative;
+  // clip-path: circle(50% at 50% 50%);
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  clip-path: circle(50% at 50% 50%);
+
+  .sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: #7DDFFC;
+    z-index: 0;
+    animation: sky-animation 5s $cubic-bezier infinite;
+  }
+
+  .sun {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 50%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #FFEF00;
+    translate: -50%;
+    transform-origin: 50% 400%;
+    animation: sun-animation 5s $cubic-bezier infinite;
+  }
+
+  .pyramid {
+    &__left {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      height: 55px;
+      width: 110px;
+      background: #F4F4F4;
+      translate: -50%;
+      clip-path: polygon(0 100%, 100% 100%, 50% 0);
+      z-index: 2;
+      animation: pyramid-left-animation 5s $cubic-bezier infinite;
+    }
+
+    &__right {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      height: 55px;
+      width: 110px;
+      background: #DDDADA;
+      translate: -50%;
+      clip-path: polygon(60% 100%, 100% 100%, 50% 0);
+      z-index: 3;
+      animation: pyramid-right-animation 5s $cubic-bezier infinite;
+    }
+  }
+
+  .shadow {
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    width: 100%;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    translate: -50%;
+    z-index: 4;
+    clip-path: polygon(19% 0, 81% 0, 50% 100%);
+    animation: shadow-animation 5s $cubic-bezier infinite;
+  }
+
+  .ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    background: #F0DE75;
+    z-index: 1;
+    animation: ground-animation 5s $cubic-bezier infinite;
+  }
+
+  @keyframes sun-animation {
+    0% {
+      transform: rotate(-70deg);
+      background: #F57209;
+    }
+
+    25% {
+      transform: rotate(-30deg);
+      background: #FFEF00;
+      box-shadow: 0 0 20px #FFEF00;
+    }
+
+    75% {
+      transform: rotate(30deg);
+      background: #F6F1D5;
+      box-shadow: 0 0 20px #F6F1D5;
+    }
+
+    100% {
+      transform: rotate(70deg);
+    }
+  }
+
+  @keyframes sky-animation {
+    0% {
+      background: #262D45;
+    }
+
+    25% {
+      background: #7DDFFC;
+    }
+
+    75% {
+      background: #1B2846;
+    }
+
+    100% {
+      background: #262D45;
+    }
+  }
+
+  @keyframes pyramid-right-animation {
+    0% {
+      background: #DDDADA;
+    }
+
+    25% {
+      background: #DDDADA;
+    }
+
+    75% {
+      background: #dddada87;
+    }
+
+    100% {
+      background: #dddada33;
+    }
+  }
+
+  @keyframes pyramid-left-animation {
+    0% {
+      background: #F4F4F4;
+    }
+
+    25% {
+      background: #F4F4F4;
+    }
+
+    75% {
+      background: #f4f4f475;
+    }
+
+    100% {
+      background: #f4f4f41c;
+    }
+  }
+
+  @keyframes shadow-animation {
+    0% {
+      clip-path: polygon(19% 0, 81% 0, 175% 100%);
+    }
+
+    25% {
+      clip-path: polygon(19% 0, 81% 0, 90% 100%);
+    }
+
+    75% {
+      clip-path: polygon(19% 0, 81% 0, 10% 100%);
+    }
+
+    100% {
+      clip-path: polygon(19% 0, 81% 0, -75% 100%);
+    }
+  }
+
+  @keyframes ground-animation {
+    0% {
+      background: #F0DE75;
+    }
+
+    25% {
+      background: #F0DE75;
+    }
+
+    75% {
+      background: #f0dd7574;
+    }
+
+    100% {
+      background: #f0dd752b;
+    }
+  }
+}

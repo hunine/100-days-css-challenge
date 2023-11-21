@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #272C34;
+  color: #fff;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: relative;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+.circle .sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: #7DDFFC;
+  z-index: 0;
+  animation: sky-animation 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.circle .sun {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 50%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #FFEF00;
+  translate: -50%;
+  transform-origin: 50% 400%;
+  animation: sun-animation 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.circle .pyramid__left {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  height: 55px;
+  width: 110px;
+  background: #F4F4F4;
+  translate: -50%;
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 50% 0);
+          clip-path: polygon(0 100%, 100% 100%, 50% 0);
+  z-index: 2;
+  animation: pyramid-left-animation 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.circle .pyramid__right {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  height: 55px;
+  width: 110px;
+  background: #DDDADA;
+  translate: -50%;
+  -webkit-clip-path: polygon(60% 100%, 100% 100%, 50% 0);
+          clip-path: polygon(60% 100%, 100% 100%, 50% 0);
+  z-index: 3;
+  animation: pyramid-right-animation 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.circle .shadow {
+  position: absolute;
+  top: 125px;
+  left: 50%;
+  width: 100%;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.2);
+  translate: -50%;
+  z-index: 4;
+  -webkit-clip-path: polygon(19% 0, 81% 0, 50% 100%);
+          clip-path: polygon(19% 0, 81% 0, 50% 100%);
+  animation: shadow-animation 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.circle .ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  background: #F0DE75;
+  z-index: 1;
+  animation: ground-animation 5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+@keyframes sun-animation {
+  0% {
+    transform: rotate(-70deg);
+    background: #F57209;
+  }
+  25% {
+    transform: rotate(-30deg);
+    background: #FFEF00;
+    box-shadow: 0 0 20px #FFEF00;
+  }
+  75% {
+    transform: rotate(30deg);
+    background: #F6F1D5;
+    box-shadow: 0 0 20px #F6F1D5;
+  }
+  100% {
+    transform: rotate(70deg);
+  }
+}
+@keyframes sky-animation {
+  0% {
+    background: #262D45;
+  }
+  25% {
+    background: #7DDFFC;
+  }
+  75% {
+    background: #1B2846;
+  }
+  100% {
+    background: #262D45;
+  }
+}
+@keyframes pyramid-right-animation {
+  0% {
+    background: #DDDADA;
+  }
+  25% {
+    background: #DDDADA;
+  }
+  75% {
+    background: rgba(221, 218, 218, 0.5294117647);
+  }
+  100% {
+    background: rgba(221, 218, 218, 0.2);
+  }
+}
+@keyframes pyramid-left-animation {
+  0% {
+    background: #F4F4F4;
+  }
+  25% {
+    background: #F4F4F4;
+  }
+  75% {
+    background: rgba(244, 244, 244, 0.4588235294);
+  }
+  100% {
+    background: rgba(244, 244, 244, 0.1098039216);
+  }
+}
+@keyframes shadow-animation {
+  0% {
+    -webkit-clip-path: polygon(19% 0, 81% 0, 175% 100%);
+            clip-path: polygon(19% 0, 81% 0, 175% 100%);
+  }
+  25% {
+    -webkit-clip-path: polygon(19% 0, 81% 0, 90% 100%);
+            clip-path: polygon(19% 0, 81% 0, 90% 100%);
+  }
+  75% {
+    -webkit-clip-path: polygon(19% 0, 81% 0, 10% 100%);
+            clip-path: polygon(19% 0, 81% 0, 10% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(19% 0, 81% 0, -75% 100%);
+            clip-path: polygon(19% 0, 81% 0, -75% 100%);
+  }
+}
+@keyframes ground-animation {
+  0% {
+    background: #F0DE75;
+  }
+  25% {
+    background: #F0DE75;
+  }
+  75% {
+    background: rgba(240, 221, 117, 0.4549019608);
+  }
+  100% {
+    background: rgba(240, 221, 117, 0.168627451);
+  }
+}/*# sourceMappingURL=style.css.map */
