@@ -9,3 +9,5 @@
 **Day 4**: https://codepen.io/huninez/pen/dyamEdm
 
 **Day 5**: https://codepen.io/huninez/pen/ZEwoaLy
+
+**Day 6**: https://codepen.io/huninez/pen/oNmdKeg
