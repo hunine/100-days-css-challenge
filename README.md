@@ -11,3 +11,5 @@
 **Day 5**: https://codepen.io/huninez/pen/ZEwoaLy
 
 **Day 6**: https://codepen.io/huninez/pen/oNmdKeg
+
+**Day 7**: https://codepen.io/huninez/pen/XWOBxmG
