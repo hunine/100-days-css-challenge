@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: black;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  filter: contrast(30);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 50%;
+}
+.circle--big {
+  width: 90px;
+  height: 90px;
+}
+.circle--medium-1 {
+  width: 72px;
+  height: 72px;
+  transform-origin: 24px 32px;
+  animation: orbit 3s ease-in-out infinite;
+}
+.circle--medium-2 {
+  width: 64px;
+  height: 64px;
+  transform-origin: 32px 45px;
+  animation: orbit 4s ease-in-out infinite;
+}
+.circle--medium-3 {
+  width: 54px;
+  height: 54px;
+  transform-origin: 75px 45px;
+  animation: orbit 6s ease-in-out infinite;
+}
+.circle--medium-4 {
+  width: 48px;
+  height: 48px;
+  transform-origin: 85px 75px;
+  animation: orbit 10s ease-in-out infinite;
+}
+.circle--medium-5 {
+  width: 48px;
+  height: 48px;
+  transform-origin: 24px 75px;
+  animation: orbit 4s ease-in-out infinite;
+}
+.circle--small-1 {
+  width: 32px;
+  height: 32px;
+  transform-origin: 75px 75px;
+  animation: orbit 5s ease-in-out infinite 1s;
+}
+.circle--small-2 {
+  width: 32px;
+  height: 32px;
+  transform-origin: -24px -24px;
+  animation: orbit 5s ease-in-out infinite 1s;
+}
+.circle--small-3 {
+  width: 30px;
+  height: 30px;
+  transform-origin: 75px -24px;
+  animation: orbit 4s ease-in-out infinite 2s;
+}
+.circle--small-4 {
+  width: 36px;
+  height: 36px;
+  transform-origin: -75px -24px;
+  animation: orbit 6s ease-in-out infinite 3s;
+}
+.circle--small-5 {
+  width: 36px;
+  height: 36px;
+  transform-origin: -75px -75px;
+  animation: orbit 6s ease-in-out infinite 2s;
+}
+
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */
